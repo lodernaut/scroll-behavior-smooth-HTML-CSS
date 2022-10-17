@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+      scroll-behavior: smooth; /*rolagem suave */
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+  .grid {
+    max-width: 1200px; /* grid vai te o máximo 1200px de largura */
+    padding: 15px; /* caso chegue muito perto da borda padding de 15px */
+    margin: 0 auto; /* 0 auto = vai ficar no meio */
+    padding-top: 88px; /* devido o menu te 73px grid ficava em baixo dele*/
+    
+  }
+  
+  .grid::after {
+    content: "";
+    display: block;
+    clear: both;
+    
+  }
+  
+  .grid .col {
+    width: 33.33%;
+    height: 300px;
+    float: left;
+    padding: 15px;
+    
+  }
+  .grid .col-content {
+    width: 100%;
+    height: 100%;
+    background: red;
+    
+  }
+  
+  .menu {
+    width: 100%;
+    position: fixed;
+    background: black;
+  }
+  
+  .menu ul {
+    list-style: none; /* retirando bolinhas da lista */
+    display: block;
+    max-width: 1200px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  
+  .menu ul li {
+    float: left;
+  }
+  
+  .menu ul li a {
+    display: block; /* se comporta como um bloco e empurra o elemento pai para baixo*/
+    color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+  }
+  
+  .menu ul li a:hover {
+    /* adicionando ação no a */
+    background: #333;
+  }
+  
+  .full-page {
+      max-width: 100%; 
+      padding: 30px;
+      margin: 0 auto;
+      padding-top: 88px; 
+      height: 100vh;
+      background: turquoise;
+    }
+  
+  .full-page-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 88px;
+  }
+  
+  @media all and (max-width: 568px;) {
+    /* só vai se aplicado quando a condição for verdadeira */
+    .grid .col {
+      width: 100%;
+      
+    }
+  }
+  
+  @media (min-width: 569px;) and (max-width: 768px) {
+    /*  a largura da tela tem que menor que 321px para se aplicado */
+    .grid .col {
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 769px;) and (max-width: 1200px) {
+    .grid .col {
+      width: 33.33%;
+    }
+  }
+  
+  @media (min-width: 1200px;) {
+    /*  qualquer largura maior que 1200 */
+    .grid .col {
+      width: 25%; /*100% / 4 */
+    }
+  }
+  
